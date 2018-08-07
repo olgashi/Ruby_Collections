@@ -6,19 +6,20 @@ munsters = {
   "Marilyn" => { "age" => 23, "gender" => "female"}
 }
 
-munsters.each do |person|
-  # what_age = person['age']
- 
-  # age_group = case what_age
-  #                      when 0..17
-  #                       'kid'
-  #                      when 18..64
-  #                       'adult'
-  #                      else
-  #                       'senior'
-  #                      end
-  # person['age_group'] = age_group
-puts person.key['age']
+names = munsters.keys
+
+for name in names
+  what_age = munsters[name]['age']
+  age_group = case what_age
+              when 0..18
+                'kid'
+              when 19..65
+                'adult'
+              else
+                'senior'
+              end
+  
+  munsters[name]['age_group'] = age_group
 end
 
 puts munsters
